@@ -1,0 +1,26 @@
+.headerTwo {
+    &__container {
+        ul {
+            display: flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            height: 160px;
+            text-transform: uppercase;
+            font-weight: 400;
+            .percent{
+                display: inline-block;
+                text-align: center;
+                line-height: 24px;
+                margin-left: 5px;
+                width: 24px;
+                height: 24px;
+                font-size: 15px;
+                color: white;
+                border-radius: 50%;
+                background: #E7426A;
+            }
+        }
+    }
+}
