@@ -1,14 +1,14 @@
 import React from 'react';
-import HeaderSlice from './HeaderSlice/HeaderSlice';
 import HeaderPartOne from './HeaderPartOne/HeaderPartOne';
 import HeaderPartTwo from './HeaderPartTwo/HeaderPartTwo';
+import SlideComponent1 from './HeaderSlide/SlideComponent1';
 
 const Header = () => {
     return (
         <header>
-            <HeaderSlice/>
-            <HeaderPartOne/>
-            <HeaderPartTwo/>
+            <SlideComponent1 />
+            <HeaderPartOne />
+            <HeaderPartTwo />
         </header>
     );
 };

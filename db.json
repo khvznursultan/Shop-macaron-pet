@@ -1,0 +1,12 @@
+{
+    "sets":[
+        {
+            "id":1,
+            "Name":"",
+            "Price":"null",
+            "Description":"",
+            "Compound":"",
+            "Sale":""
+        }
+    ]
+}

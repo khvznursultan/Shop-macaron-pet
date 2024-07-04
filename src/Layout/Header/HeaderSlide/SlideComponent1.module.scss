@@ -1,0 +1,26 @@
+.slideComponent1 {
+    background: #D4E9F9;
+    position: relative;
+
+    .container {
+        padding: 20px;
+    }
+
+    .mySwiper {
+        width: 1170px;
+        height: 100%;
+        margin: 0 auto;
+
+        .swiperSlide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            height: 50px;
+            gap: 14px;
+            font-weight: 400;
+        }
+
+    }
+    
+}
