@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import Navigate from './Navigate/Navigate';
 import News from './News/News';
+import Popular from './Popular/Popular';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner/>
             <Navigate/>
             <News/>
+            <Popular/>
         </div>
     );
 };
