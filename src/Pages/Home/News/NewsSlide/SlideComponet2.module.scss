@@ -1,6 +1,8 @@
 .slideComponent2 {
     text-align: center;
     margin-top: 30px;
+    position: relative;
+    
     .mySwiper {
         width: 100%;
         height: auto;
@@ -47,6 +49,27 @@
                     color: #e7426a;
                     font-weight: 600;
                 }
+            }
+        }
+    }
+    .swiper-pagination {
+        position: absolute;
+        bottom: 10px; /* Позиция снизу */
+        width: 100%;
+        text-align: center;
+        padding: 0 10px;
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            opacity: 1;
+            border-radius: 50%;
+            margin: 0 4px;
+            transition: background-color 0.3s;
+
+            &.swiper-pagination-bullet-active {
+                background-color: #007aff;
             }
         }
     }

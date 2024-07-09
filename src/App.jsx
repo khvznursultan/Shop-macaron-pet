@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getAllSets } from './store/setsSlice';
+import Cart from './Pages/Cart/Cart';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Layout/>}>
                     <Route path='' element={<Home/>}/>
+                    <Route path='cart' element={<Cart/>}/>
                 </Route>
             </Routes>
         </>
