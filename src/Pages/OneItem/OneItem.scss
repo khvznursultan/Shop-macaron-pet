@@ -1,0 +1,19 @@
+.oneItem{
+    &__container{
+        display: flex;
+        justify-content: space-around;
+        background: #F7F7F7;
+        padding: 50px 0;
+        img.oneImg{
+            width: 570px;
+            height: 450px;
+        }
+        &__block{
+            .oneTitle{
+                font-weight: 600;
+                font-size: 50px;
+                color: #292929;
+            }
+        }
+    }
+}

@@ -1,24 +1,22 @@
-
 .popular {
-    padding: 2rem 0;
-    background-color: #f9f9f9;
-  
-  
-  
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #333;
-    }
-  
-    .popular__cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-  
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+
+
+
+  .popular-text{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+
+  .popular__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+
     .popular__card {
       background-color: #fff;
       border-radius: 8px;
@@ -30,29 +28,29 @@
       text-align: center;
       padding: 1rem;
       position: relative;
-      
+
       &:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
-  
+
       img {
         width: 100%;
         height: auto;
         object-fit: cover;
       }
-  
+
       h4 {
         font-size: 1.25rem;
         margin: 0.5rem 0;
         color: #333;
       }
-  
+
       p {
         margin: 0.5rem 0;
         color: #666;
       }
-  
+
       .popular__price {
         display: flex;
         justify-content: space-between;
@@ -60,18 +58,18 @@
         font-size: 1rem;
         color: #333;
         margin-bottom: 1rem;
-  
+
         .original-price {
           text-decoration: line-through;
           color: #999;
         }
-  
+
         .discounted-price {
           font-weight: bold;
         }
       }
-  
-      button {
+
+      .popular-button {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
         font-weight: bold;
@@ -81,10 +79,11 @@
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-  
+
         &:hover {
           background-color: #e52354;
         }
       }
     }
   }
+}
