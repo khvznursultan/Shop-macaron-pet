@@ -16,4 +16,89 @@
             }
         }
     }
+    &__block{
+        .oneTitle{
+            font-weight: 600;
+            font-size: 50px;
+            color: #292929;
+        }
+        &__compound{
+            width: 570px;
+            height: 156px;
+            padding: 28px;
+            background: white;
+            border: 1px solid #EDEDF0;
+            h4{
+                font-weight: 600;
+                font-size: 22px;
+            }
+            p{
+                font-size: 17px;
+                font-weight: 400;
+                line-height: 22px;
+                color: #353535;
+            }
+        }
+        &__description{
+            width: 570px;
+            background: white;
+            margin-top: 10px;
+            border: 1px solid #EDEDF0;
+            padding: 27px;
+            h4{
+                font-weight: 600;
+                font-size: 22px;
+            }
+            p{
+                font-size: 17px;
+                font-weight: 400;
+                line-height: 22px;
+                color: #353535;
+            }
+        }
+        &__buy{
+            display: flex;justify-content: space-between;
+            width: 570px;
+            height: 80px;
+            padding: 15px 28px;
+            background: white;
+            border: 1px solid #EDEDF0;
+            margin-top: 10px;
+            &__price{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .original-price {
+                    text-decoration: line-through;
+                    color: grey;
+                }
+                .discounted-price {
+                    color: #E7426A;
+                    font-weight: bold;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+                .final-price {
+                    color: #E7426A;
+                    font-weight: bold;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+            button{
+                width: 178px;
+                height: 50px;
+                background: #E7426A;
+                color: white;
+                font-size: 18px;
+                font-weight: 60;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+    }
 }
