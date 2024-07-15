@@ -3,6 +3,7 @@ import './Popular.scss';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+
 const limitWords = (text, wordLimit) => {
     const words = text.split(' ');
     return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : text;
@@ -35,7 +36,9 @@ const Popular = () => {
                                     <p className="original-price">{el.price} руб</p>
                                     <p className="discounted-price">{(el.price - (el.price / 100 * el.sale)).toFixed(2)} руб</p>
                                 </div>
-                                <button className='popular-button'>В корзину</button>
+                                <Link to={`/oneitem/${el.id}`}>
+                                    <button className='popular-button'>В магазин</button>
+                                </Link>
                             </div>
                         );
                     })}

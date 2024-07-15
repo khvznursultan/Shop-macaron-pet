@@ -6,7 +6,7 @@ import Tg from './Assets/tg (2).png'
 import Vk from './Assets/vk.png'
 import Phone from './Assets/Phone.png'
 
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,7 +26,7 @@ const HeaderPartOne = () => {
                     </div>
                     <div className="headerOne__right">
                         <img className='phoneImg' src={Phone} alt="" /> <p>8 812 309-82-88</p>
-                        <img className='cartImg' src={Cart} alt="" />
+                        <Link to={'/cart'}><img className='cartImg' src={Cart} alt="" /></Link>
                         <img className='tgImg' src={Tg} alt="" />
                         <img className='vkImg' src={Vk} alt="" />
                         <img className='okImg' src={Ok} alt="" />
