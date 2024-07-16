@@ -7,7 +7,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 
-const OneItem = ({el}) => {
+const OneItem = ({ el }) => {
     const location = useLocation();
     const id = location.pathname.split('/').at(-1);
 
@@ -20,7 +20,7 @@ const OneItem = ({el}) => {
     }, [id]);
 
     const dispatch = useDispatch()
-    const add = (el) =>{
+    const add = (el) => {
         dispatch(addToCart(el))
     }
 
@@ -58,7 +58,9 @@ const OneItem = ({el}) => {
                                 <p className="final-price">{one.price} руб</p>
                             )}
                         </div>
-                        <button onClick={()=>add({...one, count:1})}><MdOutlineShoppingBag className='buyShop' />В корзину</button>
+                        <Link to={'/cart'}>
+                            <button onClick={() => add({ ...one, count: 1 })}><MdOutlineShoppingBag className='buyShop' />В корзину</button>
+                        </Link>
                     </div>
                 </div>
             </div>

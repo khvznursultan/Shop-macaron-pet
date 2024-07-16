@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeaderPartTwo.scss'
 import Logo from './assets/лого.png'
-
+import { Link } from 'react-router-dom';
 
 const HeaderPartTwo = () => {
     return (
@@ -10,7 +10,9 @@ const HeaderPartTwo = () => {
                 <ul>
                     <li>СЛАДКИЕ ДНИ <span className='percent'>%</span></li>
                     <li>подарочные наборы</li>
-                    <li><img src={Logo} alt="" /></li>
+                    <Link to={'/'}>
+                        <li><img src={Logo} alt="" /></li>
+                    </Link>
                     <li>КОМПАНИЯМ</li>
                     <li>ВЕСЬ КАТАЛОГ</li>
                 </ul>
