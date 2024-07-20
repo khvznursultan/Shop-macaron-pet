@@ -1,4 +1,4 @@
-.sale {
+.sets {
     padding: 2rem 0;
     background-color: #f9f9f9;
 
@@ -63,7 +63,7 @@
         justify-content: center;
     }
 
-    .sale__card {
+    &__card {
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -120,7 +120,7 @@
             }
         }
 
-        .sale-button {
+        .sets-button {
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
             font-weight: bold;
@@ -138,9 +138,9 @@
     }
 }
 
-// Медиа-запросы для адаптивности
+
 @media (max-width: 768px) {
-    .sale__navigate {
+    .sets__navigate {
         font-size: 14px;
 
         p {
@@ -148,13 +148,13 @@
         }
     }
 
-    .sale__card {
+    .sets__card {
         max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .sale__navigate {
+    .sets__navigate {
         font-size: 12px;
 
         p {

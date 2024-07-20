@@ -16,7 +16,7 @@ const Cart = () => {
 
     const handleDecrement = (id) => {
         const item = cart.find(el => el.id === id);
-        if (item && item.count > 1) { // Ensure item exists and count is greater than 1
+        if (item && item.count > 1) {
             dispatch(addToCart({ id, count: -1 }));
         }
     };

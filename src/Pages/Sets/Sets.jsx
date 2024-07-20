@@ -1,30 +1,30 @@
 import React from 'react';
-import './Sale.scss';
+import './Sets.scss'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
+
+
+
 const limitWords = (str, num) => {
     return str.split(" ").slice(0, num).join(" ") + (str.split(" ").length > num ? "..." : "");
 };
-
-const Sale = () => {
+const Sets = () => {
     const { data } = useSelector(state => state.setsSlice);
 
-    const saleItems = data.filter(item => item.sale > 0);
-
+    const setsItems = data.filter(item => item.sale > 0);
     return (
-        <section className='sale'>
-            <div className="sale__navigate">
+        <section className='sets'>
+            <div className="sets__navigate">
                 <div>
-                    <p><Link to={'/'}>Главная страница</Link></p><p><MdKeyboardDoubleArrowRight />Товары со скидкой</p>
+                    <p><Link to={'/'}>Главная страница</Link></p><p><MdKeyboardDoubleArrowRight />Наборы</p>
                 </div>
-                <h2>Акция: сладкие дни!</h2>
-                <p>Неделя скидок на авторские и подарочные наборы макарон</p>
+                <h2>Подарочные наборы</h2>
             </div>
             <div className="container">
-                {saleItems.map((el, index) => (
-                    <div className="sale__card" key={el.id}>
+                {setsItems.map((el, index) => (
+                    <div className="sets__card" key={el.id}>
                         <Link to={`/oneitem/${el.id}`}>
                             <img src={el.img} alt={el.name} />
                         </Link>
@@ -41,7 +41,7 @@ const Sale = () => {
                             )}
                         </div>
                         <Link to={`/oneitem/${el.id}`}>
-                            <button className='sale-button'>В магазин</button>
+                            <button className='sets-button'>В магазин</button>
                         </Link>
                     </div>
                 ))}
@@ -50,4 +50,4 @@ const Sale = () => {
     );
 };
 
-export default Sale;
+export default Sets;

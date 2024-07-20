@@ -1,145 +1,142 @@
 .banner {
+    background-image: url('https://macaronshop.ru/wp-content/uploads/2021/06/bg.svg');
+    background-size: cover;
+    background-position: center;
     position: relative;
-    background: #F7F7F7;
+    padding: 80px 0; // Увеличьте или уменьшите по необходимости
 
-    &__container {
-        height: 475px;
-
-        .heart {
-            width: 759.51px;
-            height: 479.58px;
-            position: absolute;
-            top: -20px;
-            left: 148px;
-        }
-
-        .sloy2 {
-            width: 29px;
-            height: 22px;
-            position: absolute;
-            top: 220px;
-            left: 590px;
-        }
-
-        .layer23 {
-            width: 33.75px;
-            height: 41.08px;
-            position: absolute;
-            top: 160px;
-            left: 635px;
-        }
-
-        .fon3 {
-            width: 74px;
-            height: 78px;
-            position: absolute;
-            top: 60px;
-            left: 585px;
-        }
-
-        .fon5 {
-            width: 74px;
-            height: 78px;
-            position: absolute;
-            top: 260px;
-            left: 555px;
-        }
-
-        .fon2 {
-            width: 62px;
-            height: 62px;
-            position: absolute;
-            top: 310px;
-            left: 255px;
-        }
-
-        .fon {
-            width: 62px;
-            height: 62px;
-            position: absolute;
-            top: 249px;
-            left: 210px;
-        }
-
-        .sloy10 {
-            width: 21.28px;
-            height: 31.45px;
-            position: absolute;
-            top: 311.39px;
-            left: 335.27px;
-        }
-
-        .ellipse4 {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            top: 255px;
-            right: 45px;
-        }
-
-        .ellipse3 {
-            width: 274px;
-            height: 274px;
-            position: absolute;
-            top: 125px;
-            right: 0;
-        }
-
-        .ellipse5 {
-            width: 251px;
-            height: 251px;
-            position: absolute;
-            top: 55px;
-            left: 1268px;
-        }
-
-        .fon6 {
-            width: 79px;
-            height: 79px;
-            position: absolute;
-            top: 220px;
-            left: 129px;
-        }
-
-        .sloy41 {
-            width: 23px;
-            height: 29px;
-            position: absolute;
-            top: 178px;
-            left: 160px;
-        }
-
-        .fon41 {
-            width: 71px;
-            height: 69.96px;
-            position: absolute;
-            top: 65px;
-        }
-
+    .container-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
     }
 
-    &__text {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__col {
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    &__image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: absolute;
-        right: 218px;
-        top: 135px;
+        text-align: center;
+        color: #292929; // Цвет текста
+    }
 
-        h2 {
-            text-align: center;
-            width: 431px;
-            margin: 24px 0 13px;
-            font-size: 42px;
-            font-weight: 600;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    &__brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+   
+
+    &__since {
+        font-size: 1rem;
+        color: #292929;
+        margin-top: 5px;
+        font-weight: 700;
+        position: relative;
+    }
+
+    &__since::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 2px; // Увеличьте толщину черточки
+        background: #292929; // Цвет черточки
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__since::after {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 2px; // Увеличьте толщину черточки
+        background: #292929; // Цвет черточки
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__since::before {
+        left: -60px; // Отступ слева
+    }
+
+    &__since::after {
+        right: -60px; // Отступ справа
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__snippet {
+        font-size: 1.25rem;
+        margin: 20px 0 0;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 1200px) {
+        &__title {
+            font-size: 2.5rem;
         }
 
-        p {
-            font-size: 18px;
-            font-weight: 400;
-            width: 499px;
-            text-align: center;
+        &__snippet {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__row {
+            flex-direction: column;
+        }
+
+        &__image img {
+            max-width: 100%;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__snippet {
+            font-size: 0.875rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__snippet {
+            font-size: 0.75rem;
         }
     }
 }

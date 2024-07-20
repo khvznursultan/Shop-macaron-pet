@@ -1,6 +1,6 @@
 import React from 'react';
-import './HeaderPartTwo.scss'
-import Logo from './assets/лого.png'
+import './HeaderPartTwo.scss';
+import Logo from './assets/лого.png';
 import { Link } from 'react-router-dom';
 
 const HeaderPartTwo = () => {
@@ -8,13 +8,15 @@ const HeaderPartTwo = () => {
         <div className='headerTwo'>
             <div className="headerTwo__container container">
                 <ul>
-                    <li>СЛАДКИЕ ДНИ <span className='percent'>%</span></li>
+                    <Link to={'/sale'}>
+                        <li className='no-underline'>СЛАДКИЕ ДНИ <span className='percent'>%</span></li>
+                    </Link>
                     <li>подарочные наборы</li>
                     <Link to={'/'}>
-                        <li><img src={Logo} alt="" /></li>
+                        <li className='no-underline logo'><img src={Logo} alt="" /></li>
                     </Link>
                     <li>КОМПАНИЯМ</li>
-                    <li>ВЕСЬ КАТАЛОГ</li>
+                    <li className='no-underline catalog'>ВЕСЬ КАТАЛОГ</li>
                 </ul>
             </div>
         </div>

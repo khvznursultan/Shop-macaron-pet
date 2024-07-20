@@ -9,6 +9,7 @@ import { getAllSets, setLoading, setError } from './store/setsSlice';
 import Cart from './Pages/Cart/Cart';
 import OneItem from './Pages/OneItem/OneItem';
 import Sale from './Pages/Sale/Sale';
+import Sets from './Pages/Sets/Sets';
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
                     <Route path='cart' element={<Cart />} />
                     <Route path='oneItem/:id' element={<OneItem />} />
                     <Route path='sale' element={<Sale/>}/>
+                    <Route path='sets' element={<Sets/>}/>
                 </Route>
             </Routes>
         </>
