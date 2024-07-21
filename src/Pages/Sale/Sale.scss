@@ -6,7 +6,7 @@
         max-width: 1170px;
         margin: 0 auto;
         display: flex;
-        flex-direction: column; /* Изменено на column для стилизации */
+        flex-direction: column;
         align-items: center;
         font-size: 16px;
         margin-bottom: 20px;
@@ -21,11 +21,11 @@
                 padding: 0;
                 display: flex;
                 align-items: center;
-                font-size: 16px; /* Вы можете настроить размер шрифта по необходимости */
-                color: #333; /* Вы можете настроить цвет шрифта по необходимости */
+                font-size: 16px;
+                color: #333;
 
                 &:not(:last-child) {
-                    margin-right: 10px; /* Расстояние между текстами */
+                    margin-right: 10px;
                 }
             }
 
@@ -36,13 +36,13 @@
         }
 
         h2 {
-            font-size: 24px; /* Вы можете настроить размер заголовка по необходимости */
+            font-size: 24px;
             margin: 0.5rem 0;
             color: #333;
         }
 
         p {
-            font-size: 16px; /* Вы можете настроить размер текста по необходимости */
+            font-size: 16px;
             color: #666;
         }
 
@@ -74,7 +74,9 @@
         text-align: center;
         padding: 1rem;
         position: relative;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -120,25 +122,48 @@
             }
         }
 
-        .sale-button {
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            background-color: #e7426a;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .sale__actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
 
-            &:hover {
-                background-color: darken(#e7426a, 10%);
+            .sale-button, .add-to-cart-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                flex: 1; 
+                text-align: center; 
+                
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            .sale-button {
+                background-color: #e7426a;
+
+                &:hover {
+                    background-color: darken(#e7426a, 10%);
+                }
+            }
+
+            .add-to-cart-button {
+                background-color: #007bff;
+
+                &:hover {
+                    background-color: darken(#007bff, 10%);
+                }
             }
         }
     }
 }
 
-// Медиа-запросы для адаптивности
+
 @media (max-width: 768px) {
     .sale__navigate {
         font-size: 14px;

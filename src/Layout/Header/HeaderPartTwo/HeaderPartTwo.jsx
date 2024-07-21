@@ -11,7 +11,9 @@ const HeaderPartTwo = () => {
                     <Link to={'/sale'}>
                         <li className='no-underline'>СЛАДКИЕ ДНИ <span className='percent'>%</span></li>
                     </Link>
+                    <Link to={'/allclothes'}>
                     <li>подарочные наборы</li>
+                    </Link>
                     <Link to={'/'}>
                         <li className='no-underline logo'><img src={Logo} alt="" /></li>
                     </Link>

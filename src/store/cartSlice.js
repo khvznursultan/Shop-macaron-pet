@@ -13,14 +13,18 @@ export const cartSlice = createSlice({
             const itemIndex = state.cart.findIndex(item => item.id === id);
 
             if (itemIndex >= 0) {
-                const updatedCart = state.cart.map(item => 
-                    item.id === id
-                        ? { ...item, count: item.count + count }
-                        : item
-                );
-                state.cart = updatedCart;
+                const item = state.cart[itemIndex];
+                const newCount = item.count + count;
+
+                if (newCount <= 5) {
+                   
+                    state.cart[itemIndex] = { ...item, count: newCount };
+                }
             } else {
-                state.cart = [...state.cart, { ...action.payload, count: 1 }];
+               
+                if (count <= 5) {
+                    state.cart.push({ ...action.payload, count: 1 });
+                }
             }
         },
         removeFromCart: (state, action) => {
@@ -30,14 +34,9 @@ export const cartSlice = createSlice({
             if (itemIndex >= 0) {
                 const item = state.cart[itemIndex];
                 if (item.count > count) {
-                    const updatedCart = state.cart.map(item =>
-                        item.id === id
-                            ? { ...item, count: item.count - count }
-                            : item
-                    );
-                    state.cart = updatedCart;
+                    state.cart[itemIndex] = { ...item, count: item.count - count };
                 } else {
-                    state.cart = state.cart.filter(item => item.id !== id);
+                    state.cart.splice(itemIndex, 1);
                 }
             }
         },
