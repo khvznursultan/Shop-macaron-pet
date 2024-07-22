@@ -16,7 +16,9 @@ const HeaderPartOne = () => {
             <div className="headerOne__container container">
                 <div className="headerOne__left">
                     <ul>
-                        <li>Гарантия свежести</li>
+                        <Link to={'guarantee'}>
+                            <li>Гарантия свежести</li>
+                        </Link>
                         <li>Доставка и оплата</li>
                         <li>Оптовые поставки</li>
                         <li>Контакты</li>

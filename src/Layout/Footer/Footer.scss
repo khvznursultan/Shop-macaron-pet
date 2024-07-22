@@ -1,0 +1,124 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    background: #EBEDEE;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .col-3, .col-xl-2, .col-12 {
+        flex: 0 0 auto;
+        padding: 0 15px;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-xl-2 {
+        width: 16.6%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .order-xl-first {
+        order: -1;
+    }
+
+    .footer__widget {
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .textwidget {
+            p {
+                margin: 0;
+
+                a {
+                    color: #292929;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__phone {
+        color: #292929;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .socials {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        .socials__item {
+            svg {
+                fill: #292929;
+                width: 24px;
+                height: 24px;
+                transition: fill 0.3s;
+
+                &:hover {
+                    fill: #007bff;
+                }
+            }
+        }
+    }
+
+    .footer__features {
+        .footer__left__img {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            p {
+                margin: 0;
+                font-size: 14px;
+                color: #292929;
+            }
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #292929;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .col-3, .col-xl-2, .col-12 {
+            width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .footer__widget, .footer__features {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -11,6 +11,10 @@ import OneItem from './Pages/OneItem/OneItem';
 import Sale from './Pages/Sale/Sale';
 import Sets from './Pages/Sets/Sets';
 import AllClothes from './Pages/AllClothes/AllClothes';
+import NotFound from './Pages/NotFound/NotFound';
+import Guarantee from './Pages/Guarantee/Guarantee';
+
+
 
 
 
@@ -37,6 +41,8 @@ const App = () => {
                     <Route path='sale' element={<Sale/>}/>
                     <Route path='sets' element={<Sets/>}/>
                     <Route path='allclothes' element={<AllClothes/>}/>
+                    <Route path='guarantee' element={<Guarantee/>}/>
+                <Route path='*' element={<NotFound/>}/>
                 </Route>
             </Routes>
         </>

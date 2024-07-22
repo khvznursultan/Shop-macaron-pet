@@ -1,0 +1,31 @@
+.notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    gap: 50px;
+    background: #f7f7f7;
+    p{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    img{
+        width: 573px;
+        height: 240px;
+    }
+    button{
+        width: 234px;
+        height: 50px;
+        background: #e7426a;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 10px;
+    }
+    button:hover{
+        background: #d23d63;
+        cursor: pointer;
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Cart.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,19 @@ import { addToCart, deleteCart } from '../../store/cartSlice';
 const Cart = () => {
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.cartSlice);
+
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem('cart'));
+        if (storedCart) {
+            storedCart.forEach(item => {
+                dispatch(addToCart({ ...item, count: item.count }));
+            });
+        }
+    }, [dispatch]);
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
     const handleIncrement = (id) => {
         dispatch(addToCart({ id, count: 1 }));

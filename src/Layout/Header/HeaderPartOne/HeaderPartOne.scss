@@ -1,4 +1,25 @@
 .headerOne {
+    a{
+        text-decoration: none;
+        position: relative;
+        color: inherit;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem; 
+            width: 100%;
+            height: 0.2rem; 
+            background-color: #e7426a;
+            transform: scaleX(0); 
+            transform-origin: left; 
+            transition: transform 0.3s ease; 
+        }
+    
+        &:hover::after {
+            transform: scaleX(1); 
+        }
+    }
     background: #F7EBE5;
     font-weight: 400;
     border-bottom: 1px solid #E5E5E5;
