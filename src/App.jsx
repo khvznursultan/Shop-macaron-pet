@@ -13,6 +13,7 @@ import Sets from './Pages/Sets/Sets';
 import AllClothes from './Pages/AllClothes/AllClothes';
 import NotFound from './Pages/NotFound/NotFound';
 import Guarantee from './Pages/Guarantee/Guarantee';
+import Delivery from './Pages/Delivery/Delivery';
 
 
 
@@ -42,6 +43,7 @@ const App = () => {
                     <Route path='sets' element={<Sets/>}/>
                     <Route path='allclothes' element={<AllClothes/>}/>
                     <Route path='guarantee' element={<Guarantee/>}/>
+                    <Route path='delivery' element={<Delivery/>}/>
                 <Route path='*' element={<NotFound/>}/>
                 </Route>
             </Routes>

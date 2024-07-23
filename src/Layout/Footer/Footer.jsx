@@ -15,47 +15,41 @@ const Footer = () => {
                     <div className="col-3 col-xl-2">
                         <div className="footer__widget">
                             <h3>Информация</h3>
-                            <div className="textwidget">
-                                <p>
-                                    <a href="https://macaronshop.ru/o-nas/">О компании</a><br />
-                                    <a href="/garanty/">Гарантии вкуса и свежести</a><br />
-                                    <a href="/delivery/">Доставка и оплата</a><br />
-                                    <a href="/contacts/">Контакты</a><br />
-                                    <a href="https://macaronshop.ru/privacy-policy/">Политика конфиденциальности</a><br />
-                                    <a href="https://macaronshop.ru/vkusy-macarons/">Вкусы макарон</a>
-                                </p>
-                            </div>
+                            <ul className="textwidget">
+                                <li>О компании</li>
+                                <li>Гарантии вкуса и свежести</li>
+                                <li>Доставка и оплата</li>
+                                <li>Контакты</li>
+                                <li>Политика конфиденциальности</li>
+                                <li>Вкусы макарон</li>
+                            </ul>
                         </div>
                     </div>
                     <div className="col-3 col-xl-2">
                         <div className="footer__widget">
                             <h3>Каталог</h3>
-                            <div className="textwidget">
-                                <p>
-                                    <a href="/catalog/">Каталог десертов</a><br />
-                                    <a href="https://macaronshop.ru/catalog/podarochnye-nabory/">Подарочные наборы</a><br />
-                                    <a href="/sobrat-nabor/">Собрать свой набор</a><br />
-                                    <a href="https://macaronshop.ru/print/">Создать дизайн</a>
-                                </p>
-                            </div>
+                            <ul className="textwidget">
+                                <li>Каталог десертов</li>
+                                <li>Подарочные наборы</li>
+                                <li>Собрать свой набор</li>
+                                <li>Создать дизайн</li>
+                            </ul>
                         </div>
                     </div>
                     <div className="col-3 col-xl-2">
                         <div className="footer__widget">
                             <h3>Для бизнеса</h3>
-                            <div className="textwidget">
-                                <p>
-                                    <a href="https://macaronshop.ru/korporativnye-podarki/">Корпоративные подарки</a><br />
-                                    <a href="https://macaronshop.ru/deserty-dlya-kofejni/">Оптовикам</a>
-                                </p>
-                            </div>
+                            <ul className="textwidget">
+                                <li>Корпоративные подарки</li>
+                                <li>Оптовикам</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className="col-3 col-xl-2 footer__last">
+                    <div className="col-3 col-xl-2">
                         <div className="widget_text footer__widget">
                             <div className="textwidget custom-html-widget">
-                                <a href="tel:+7 (812) 309 82 88" className="footer__phone">+7 (812) 309 82 88</a><br />
-                                с 9:00 до 18:00
+                                <p className="footer__phone">+7 (812) 309 82 88</p>
+                                <p>с 9:00 до 18:00</p>
                             </div>
                         </div>
                         <div className="socials">
@@ -70,22 +64,20 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col-12 col-xl-4 order-xl-first">
-                        <div className="footer__features">
-                            <div className="footer__left__img">
-                                <img src={Hamb} alt="Hamburger" />
-                                <p>Готовим вручную и с любовью</p>
-                            </div>
-                            <div className="footer__left__img">
-                                <img src={Car} alt="Car" />
-                                <p>Доставим в день заказа</p>
-                            </div>
-                            <div className="footer__left__img">
-                                <img src={List} alt="List" />
-                                <p>100% миндальная мука и натуральные ингредиенты</p>
-                            </div>
-                            <p>© 2021 Макароншоп ООО "Квантум", Санкт-Петербург, улица Маршала Тухачевского, дом 22</p>
+                    <div className="col-12 footer__features">
+                        <div className="footer__left__img">
+                            <img src={Hamb} alt="Hamburger" />
+                            <p>Готовим вручную и с любовью</p>
                         </div>
+                        <div className="footer__left__img">
+                            <img src={Car} alt="Car" />
+                            <p>Доставим в день заказа</p>
+                        </div>
+                        <div className="footer__left__img">
+                            <img src={List} alt="List" />
+                            <p>100% миндальная мука и натуральные ингредиенты</p>
+                        </div>
+                        <p>© 2021 Макароншоп ООО "Квантум", Санкт-Петербург, улица Маршала Тухачевского, дом 22</p>
                     </div>
                 </div>
             </div>
