@@ -19,7 +19,9 @@ const HeaderPartOne = () => {
                         <Link to={'guarantee'}>
                             <li>Гарантия свежести</li>
                         </Link>
-                        <li>Доставка и оплата</li>
+                        <Link to={'delivery'}>
+                            <li>Доставка и оплата</li>
+                        </Link>
                         <li>Оптовые поставки</li>
                         <li>Контакты</li>
                     </ul>

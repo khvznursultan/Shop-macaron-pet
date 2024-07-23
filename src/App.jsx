@@ -14,6 +14,7 @@ import AllClothes from './Pages/AllClothes/AllClothes';
 import NotFound from './Pages/NotFound/NotFound';
 import Guarantee from './Pages/Guarantee/Guarantee';
 import Delivery from './Pages/Delivery/Delivery';
+import Catalog from './Pages/Catalog/Catalog';
 
 
 
@@ -44,6 +45,7 @@ const App = () => {
                     <Route path='allclothes' element={<AllClothes/>}/>
                     <Route path='guarantee' element={<Guarantee/>}/>
                     <Route path='delivery' element={<Delivery/>}/>
+                    <Route path="catalog" element={<Catalog />} />
                 <Route path='*' element={<NotFound/>}/>
                 </Route>
             </Routes>
