@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sets.scss';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { getAllSets, setLoading, setError } from '../../store/setsSlice';
 
 const limitWords = (str, num) => {
     return str.split(" ").slice(0, num).join(" ") + (str.split(" ").length > num ? "..." : "");
@@ -11,18 +12,27 @@ const limitWords = (str, num) => {
 
 const Sets = () => {
     const dispatch = useDispatch();
-    const { data } = useSelector(state => state.setsSlice); 
-    console.log({data});
+    const { data, loading, error } = useSelector(state => state.setsSlice);
     const [selectedCategory, setSelectedCategory] = useState('Все');
 
-    
+    useEffect(() => {
+        if (data.length === 0) {
+            dispatch(setLoading());
+            fetch('http://localhost:8080/clothes')
+              .then(response => response.json())
+              .then(data => dispatch(getAllSets(data)))
+              .catch(error => dispatch(setError(error.toString())));
+        }
+    }, [dispatch, data.length]);
+
     const filteredItems = selectedCategory === 'Все'
-    ? data
-    : data.filter(item => item.purpose === selectedCategory);
+        ? data
+        : data.filter(item => item.purpose === selectedCategory);
 
     const handleAddToCart = (item) => {
         dispatch(addToCart({ ...item, id: item.id, count: 1 }));
     };
+    
 
     return (
         <section className='sets'>
@@ -41,38 +51,44 @@ const Sets = () => {
                     <li onClick={() => setSelectedCategory('День рождение')}>День рождение</li>
                     <li onClick={() => setSelectedCategory('Классический')}>Классический</li>
                 </ul>
-                <div className="sets__items">
-                    {filteredItems.map((el) => (
-                        <div className="sets__card" key={el.id}>
-                            <Link to={`/oneitem/${el.id}`}>
-                                <img src={el.img} alt={el.title} />
-                            </Link>
-                            <h4>{el.title}</h4>
-                            <p>{limitWords(el.description, 8)}</p>
-                            <div className={`sets__price ${el.sale === 0 ? 'no-sale' : ''}`}>
-                                {el.sale > 0 ? (
-                                    <>
-                                        <p className="original-price">{el.price} руб</p>
-                                        <p className="discounted-price">{(el.price - (el.price / 100 * el.sale)).toFixed(2)} руб</p>
-                                    </>
-                                ) : (
-                                    <p className="discounted-price">{el.price} руб</p>
-                                )}
-                            </div>
-                            <div className="sets__actions">
+                {loading ? (
+                    <p>Loading...</p>
+                ) : error ? (
+                    <p>Error: {error}</p>
+                ) : (
+                    <div className="sets__items">
+                        {filteredItems.map((el) => (
+                            <div className="sets__card" key={el.id}>
                                 <Link to={`/oneitem/${el.id}`}>
-                                    <button className='sale-button'>В магазин</button>
+                                    <img src={el.img} alt={el.title} />
                                 </Link>
-                                <button
-                                    className='add-to-cart-button'
-                                    onClick={() => handleAddToCart(el)}
-                                >
-                                    В корзину
-                                </button>
+                                <h4>{el.title}</h4>
+                                <p>{limitWords(el.description, 8)}</p>
+                                <div className={`sets__price ${el.sale === 0 ? 'no-sale' : ''}`}>
+                                    {el.sale > 0 ? (
+                                        <>
+                                            <p className="original-price">{el.price} руб</p>
+                                            <p className="discounted-price">{(el.price - (el.price / 100 * el.sale)).toFixed(2)} руб</p>
+                                        </>
+                                    ) : (
+                                        <p className="discounted-price">{el.price} руб</p>
+                                    )}
+                                </div>
+                                <div className="sets__actions">
+                                    <Link to={`/oneitem/${el.id}`}>
+                                        <button className='sale-button'>В магазин</button>
+                                    </Link>
+                                    <button
+                                        className='add-to-cart-button'
+                                        onClick={() => handleAddToCart(el)}
+                                    >
+                                        В корзину
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

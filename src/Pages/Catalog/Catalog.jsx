@@ -12,7 +12,9 @@ const Catalog = () => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
-
+    useEffect(() => {
+        console.log(filteredItems);
+    }, [filteredItems]);
     const limitWords = (text, limit) => {
         return text.split(' ').slice(0, limit).join(' ') + (text.split(' ').length > limit ? '...' : '');
     };
