@@ -1,7 +1,6 @@
 .guarantee {
     padding: 42px;
     background: #F7F7F7;
-
     h2 {
         margin: 22px 0 24px;
     }
@@ -21,6 +20,7 @@
     }
 
     &__container {
+        margin-top: 230px;
         display: flex;
         justify-content: center;
         align-items: center;

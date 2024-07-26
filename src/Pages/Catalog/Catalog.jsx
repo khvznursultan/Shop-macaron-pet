@@ -3,18 +3,18 @@ import './Catalog.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../store/productsSlice';
 import { Link } from 'react-router-dom';
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+
+
+
 
 const Catalog = () => {
     const dispatch = useDispatch();
     const { filteredItems, status, error } = useSelector(state => state.products);
-
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
-    useEffect(() => {
-        console.log(filteredItems);
-    }, [filteredItems]);
     const limitWords = (text, limit) => {
         return text.split(' ').slice(0, limit).join(' ') + (text.split(' ').length > limit ? '...' : '');
     };
@@ -25,8 +25,11 @@ const Catalog = () => {
 
     return (
         <section className="catalog">
-            <div className="catalog__navigate">
-                <h2>Каталог товаров</h2>
+            <div className="sets__navigate">
+                <div>
+                    <p><Link to={'/'}>Главная страница</Link></p>
+                    <p><MdKeyboardDoubleArrowRight />Каталог</p>
+                </div>
             </div>
             <div className="container">
                 {filteredItems.map((el) => (

@@ -51,12 +51,12 @@ const HeaderPartTwo = () => {
                             <ul>
                                 <li><button onClick={() => handleFilterChange('Макарон')}>Макароны</button></li>
                                 <li><button onClick={() => handleFilterChange('Эклер')}>Эклеры</button></li>
-                                <li><button onClick={() => handleFilterChange('Кейк-попс')}>Кейк-попсы</button></li>
+                                <li><button onClick={() => handleFilterChange('Кэйк-попс')}>Кейк-попсы</button></li>
                                 <li><button onClick={() => handleFilterChange('Зефир')}>Зефир</button></li>
                             </ul>
                         </div>
                     </li>
-                    <li className='no-underline catalog'>КОМПАНИЯМ</li>
+                    <li className='no-underline'>КОМПАНИЯМ</li>
                 </ul>
             </div>
         </div>

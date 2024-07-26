@@ -40,14 +40,14 @@ const App = () => {
                     <Route path='' element={<Home />} />
                     <Route path='cart' element={<Cart />} />
                     <Route path='oneItem/:id' element={<OneItem />} />
-                    <Route path='sale' element={<Sale/>}/>
-                    <Route path='sets' element={<Sets/>}/>
-                    <Route path='allclothes' element={<AllClothes/>}/>
-                    <Route path='guarantee' element={<Guarantee/>}/>
-                    <Route path='delivery' element={<Delivery/>}/>
+                    <Route path='sale' element={<Sale />} />
+                    <Route path='sets' element={<Sets />} />
+                    <Route path='allclothes' element={<AllClothes />} />
+                    <Route path='guarantee' element={<Guarantee />} />
+                    <Route path='delivery' element={<Delivery />} />
                     <Route path="catalog" element={<Catalog />} />
-                <Route path='*' element={<NotFound/>}/>
                 </Route>
+                    <Route path='*' element={<NotFound />} />
             </Routes>
         </>
     );

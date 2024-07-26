@@ -1,12 +1,13 @@
 import React from 'react';
 import './HeaderPartOne.scss';
 import Cart from './Assets/Cart.png';
-import Ok from './Assets/ok.png';
-import Tg from './Assets/tg (2).png';
-import Vk from './Assets/vk.png';
 import Phone from './Assets/Phone.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FaUser } from "react-icons/fa";
+import { FaUserCheck } from "react-icons/fa";
+пше
+
 
 const HeaderPartOne = () => {
     const cartItemsCount = useSelector(state => state.cartSlice.cart.reduce((total, item) => total + item.count, 0));
@@ -22,7 +23,6 @@ const HeaderPartOne = () => {
                         <Link to={'delivery'}>
                             <li>Доставка и оплата</li>
                         </Link>
-                        <li>Оптовые поставки</li>
                         <li>Контакты</li>
                     </ul>
                 </div>
@@ -35,9 +35,7 @@ const HeaderPartOne = () => {
                             <span className="cart-text">в корзине ({cartItemsCount})</span>
                         </div>
                     </Link>
-                    <img className='tgImg' src={Tg} alt="Telegram" />
-                    <img className='vkImg' src={Vk} alt="VK" />
-                    <img className='okImg' src={Ok} alt="OK" />
+                    <FaUser/>
                 </div>
             </div>
         </div>
@@ -45,3 +43,6 @@ const HeaderPartOne = () => {
 };
 
 export default HeaderPartOne;
+
+
+

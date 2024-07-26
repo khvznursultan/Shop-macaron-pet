@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.scss'
 import HeaderPartOne from './HeaderPartOne/HeaderPartOne';
 import HeaderPartTwo from './HeaderPartTwo/HeaderPartTwo';
 import SlideComponent1 from './HeaderSlide/SlideComponent1';
