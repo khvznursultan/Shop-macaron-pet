@@ -53,13 +53,13 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="socials">
-                            <a href="https://t.me/macaron_shop" className="socials__item socials__telegram" target="_blank" rel="nofollow noopener">
+                            <a href="" className="socials__item socials__telegram" target="_blank" rel="nofollow noopener">
                                 <CiInstagram />
                             </a>
-                            <a href="https://vk.com/macaronshop" className="socials__item socials__vk" target="_blank" rel="nofollow noopener">
+                            <a href="" className="socials__item socials__vk" target="_blank" rel="nofollow noopener">
                                 <SlSocialVkontakte />
                             </a>
-                            <a href="https://ok.ru/group/62315085824126" className="socials__item socials__ok" target="_blank" rel="nofollow noopener">
+                            <a href="" className="socials__item socials__ok" target="_blank" rel="nofollow noopener">
                                 <FaFacebook />
                             </a>
                         </div>

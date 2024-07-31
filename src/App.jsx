@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import './App.scss';
 import Home from './Pages/Home/Home';
@@ -16,12 +16,9 @@ import Guarantee from './Pages/Guarantee/Guarantee';
 import Delivery from './Pages/Delivery/Delivery';
 import Catalog from './Pages/Catalog/Catalog';
 
-
-
-
-
 const App = () => {
     const dispatch = useDispatch();
+    const location = useLocation(); // Хук для получения текущего местоположения (маршрута)
     const { loading, error } = useSelector(state => state.setsSlice);
 
     useEffect(() => {
@@ -30,6 +27,10 @@ const App = () => {
             .then(({ data }) => dispatch(getAllSets(data)))
             .catch(err => dispatch(setError(err.message)));
     }, [dispatch]);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [location]);
 
     return (
         <>
@@ -45,9 +46,9 @@ const App = () => {
                     <Route path='allclothes' element={<AllClothes />} />
                     <Route path='guarantee' element={<Guarantee />} />
                     <Route path='delivery' element={<Delivery />} />
-                    <Route path="catalog" element={<Catalog />} />
+                    <Route path='catalog' element={<Catalog />} />
                 </Route>
-                    <Route path='*' element={<NotFound />} />
+                <Route path='*' element={<NotFound />} />
             </Routes>
         </>
     );

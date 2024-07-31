@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HeaderPartOne.scss';
 import Cart from './Assets/Cart.png';
 import Phone from './Assets/Phone.png';
@@ -6,11 +6,17 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaUser } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
-пше
+import Registration from '../../../Pages/Registration/Registration';
+
 
 
 const HeaderPartOne = () => {
     const cartItemsCount = useSelector(state => state.cartSlice.cart.reduce((total, item) => total + item.count, 0));
+    const [isRegistrationVisible, setIsRegistrationVisible] = useState(false); 
+
+    const toggleRegistration = () => {
+        setIsRegistrationVisible(prevState => !prevState);
+    };
 
     return (
         <div className="headerOne">
@@ -35,14 +41,12 @@ const HeaderPartOne = () => {
                             <span className="cart-text">в корзине ({cartItemsCount})</span>
                         </div>
                     </Link>
-                    <FaUser/>
+                    <FaUser onClick={toggleRegistration} className="user-icon" />
                 </div>
             </div>
+            {isRegistrationVisible && <Registration onClose={toggleRegistration} />}
         </div>
     );
 };
 
 export default HeaderPartOne;
-
-
-
