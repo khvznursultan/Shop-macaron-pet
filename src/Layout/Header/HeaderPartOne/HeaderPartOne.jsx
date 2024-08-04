@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HeaderPartOne.scss';
 import Cart from './Assets/Cart.png';
 import Phone from './Assets/Phone.png';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { FaUser } from "react-icons/fa";
-import { FaUserCheck } from "react-icons/fa";
+import { useSelector, useDispatch } from 'react-redux';
+import { FaUser, FaUserCheck } from "react-icons/fa";
 import Registration from '../../../Pages/Registration/Registration';
-
-
+import { loadUserFromLocalStorage, logoutUser } from '../../../store/userSlice';
 
 const HeaderPartOne = () => {
+    const dispatch = useDispatch();
     const cartItemsCount = useSelector(state => state.cartSlice.cart.reduce((total, item) => total + item.count, 0));
-    const [isRegistrationVisible, setIsRegistrationVisible] = useState(false); 
+    const user = useSelector(state => state.user.user);
+    const [isRegistrationVisible, setIsRegistrationVisible] = useState(false);
+
+    useEffect(() => {
+        dispatch(loadUserFromLocalStorage());
+    }, [dispatch]);
 
     const toggleRegistration = () => {
         setIsRegistrationVisible(prevState => !prevState);
+    };
+
+    const handleLogout = () => {
+        dispatch(logoutUser());
     };
 
     return (
@@ -23,10 +31,10 @@ const HeaderPartOne = () => {
             <div className="headerOne__container container">
                 <div className="headerOne__left">
                     <ul>
-                        <Link to={'guarantee'}>
+                        <Link to={'/guarantee'}>
                             <li>Гарантия свежести</li>
                         </Link>
-                        <Link to={'delivery'}>
+                        <Link to={'/delivery'}>
                             <li>Доставка и оплата</li>
                         </Link>
                         <li>Контакты</li>
@@ -41,7 +49,15 @@ const HeaderPartOne = () => {
                             <span className="cart-text">в корзине ({cartItemsCount})</span>
                         </div>
                     </Link>
-                    <FaUser onClick={toggleRegistration} className="user-icon" />
+                    {user ? (
+                        <>
+                            <FaUserCheck className="user-icon" />
+                            <span className="user-name">{user.name}</span>
+                            <button className="logout-button" onClick={handleLogout}>Выйти</button>
+                        </>
+                    ) : (
+                        <FaUser onClick={toggleRegistration} className="user-icon" />
+                    )}
                 </div>
             </div>
             {isRegistrationVisible && <Registration onClose={toggleRegistration} />}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import './App.scss';
 import Home from './Pages/Home/Home';
@@ -18,8 +18,9 @@ import Catalog from './Pages/Catalog/Catalog';
 
 const App = () => {
     const dispatch = useDispatch();
-    const location = useLocation(); // Хук для получения текущего местоположения (маршрута)
+    const location = useLocation();
     const { loading, error } = useSelector(state => state.setsSlice);
+    const { isLoggedIn } = useSelector(state => state.user);
 
     useEffect(() => {
         dispatch(setLoading());
@@ -39,7 +40,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route path='' element={<Home />} />
-                    <Route path='cart' element={<Cart />} />
+                    <Route path='cart' element={isLoggedIn ? <Cart /> : <Navigate to='/' />} />
                     <Route path='oneItem/:id' element={<OneItem />} />
                     <Route path='sale' element={<Sale />} />
                     <Route path='sets' element={<Sets />} />
