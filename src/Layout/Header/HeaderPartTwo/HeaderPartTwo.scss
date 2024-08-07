@@ -121,31 +121,8 @@
 }
 
 
-@media (max-width: 770px) {
+@media (max-width: 905px) {
     .headerTwo {
         display: none;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .headerTwo {
-        &__container {
-            ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    }
-}
-
-@media (max-width: 480px) {
-    .headerTwo {
-        &__container {
-            ul {
-                font-size: 0.875rem;
-                height: auto;
-            }
-        }
     }
 }

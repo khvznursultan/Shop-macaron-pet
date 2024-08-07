@@ -17,6 +17,12 @@
       "password": "$2a$10$C5jk6SK00J4TUCvu/4eVru1v8et0qInPIbgb15uWRjX2VzHO6vhQ2",
       "name": "выфвыф",
       "id": 3
+    },
+    {
+      "email": "havaza@gmail.com",
+      "password": "$2a$10$WR6RjKbLTT9Unli2mKyWQOnY4QcZI7UAIGusU96ZMROmtLjLXCENe",
+      "name": "Nursultan",
+      "id": 4
     }
   ],
   "clothes": [

@@ -4,7 +4,6 @@
     background-position: center;
     position: relative;
     padding: 80px 0;
-    // margin-top: 150px;
 
     .container-1 {
         display: flex;
@@ -41,7 +40,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        color: #292929; // Цвет текста
+        color: #292929;
     }
 
     &__brand {
@@ -66,8 +65,8 @@
         content: "";
         display: inline-block;
         width: 40px;
-        height: 2px; // Увеличьте толщину черточки
-        background: #292929; // Цвет черточки
+        height: 2px; 
+        background: #292929;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -77,19 +76,19 @@
         content: "";
         display: inline-block;
         width: 40px;
-        height: 2px; // Увеличьте толщину черточки
-        background: #292929; // Цвет черточки
+        height: 2px;
+        background: #292929;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
     }
 
     &__since::before {
-        left: -60px; // Отступ слева
+        left: -60px;
     }
 
     &__since::after {
-        right: -60px; // Отступ справа
+        right: -60px; 
     }
 
     &__title {

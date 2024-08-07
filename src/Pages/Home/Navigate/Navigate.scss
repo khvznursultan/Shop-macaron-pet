@@ -21,11 +21,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+        justify-content: center;
+        align-items: center;
 
         h4 {
             font-weight: 600;
             font-size: 20px;
-            line-height: 24, 38px;
+            line-height: 24px;
             margin: 20px 0 10px;
             text-align: center;
             color: #292929;
@@ -40,70 +42,11 @@
             color: #292929;
         }
 
-        &__one {
-
-            z-index: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 570px;
-            height: 260px;
-            background: linear-gradient(155deg, rgba(253, 233, 219, 1) 50%, rgba(255, 219, 195, 1) 50%);
-        }
-
-        &__two {
-            z-index: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 570px;
-            height: 260px;
-            background: linear-gradient(25deg, rgba(253, 204, 212, 1) 50%, rgba(253, 219, 224, 1) 50%);
-        }
-
-        &__three {
-            z-index: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 570px;
-            height: 260px;
-            background: linear-gradient(25deg, rgba(211, 241, 211, 1) 50%, rgba(193, 236, 192, 1) 50%);
-
-        }
-
-        &__four {
-            z-index: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 570px;
-            height: 260px;
-            background: linear-gradient(155deg, rgba(251,219,213,1) 50%, rgba(252,230,225,1) 50%);
-
-        }
-
-        &__five {
-            z-index: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 570px;
-            height: 260px;
-            background: linear-gradient(155deg, rgba(204,234,235,1) 50%, rgba(183,225,227,1) 50%);
-
-        }
-
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
         &__six {
             z-index: 1;
             position: relative;
@@ -111,11 +54,87 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 570px;
+            width: 100%;
+            max-width: 570px; 
             height: 260px;
+            background: linear-gradient(155deg, rgba(253, 233, 219, 1) 50%, rgba(255, 219, 195, 1) 50%);
+
+          
+        }
+
+      
+        &__two {
+            background: linear-gradient(25deg, rgba(253, 204, 212, 1) 50%, rgba(253, 219, 224, 1) 50%);
+        }
+
+        &__three {
+            background: linear-gradient(25deg, rgba(211, 241, 211, 1) 50%, rgba(193, 236, 192, 1) 50%);
+        }
+
+        &__four {
+            background: linear-gradient(155deg, rgba(251,219,213,1) 50%, rgba(252,230,225,1) 50%);
+        }
+
+        &__five {
+            background: linear-gradient(155deg, rgba(204,234,235,1) 50%, rgba(183,225,227,1) 50%);
+        }
+
+        &__six {
             background: linear-gradient(25deg, rgba(206,207,238,1) 50%, rgba(220,221,243,1) 50%);
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .navigate {
+        &__block {
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .navigate {
+        &__block {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
+        &__six {
+            width: 90%; 
+            height: auto; 
 
         }
 
+        h4 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navigate {
+        &__block {
+            gap: 15px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 12px;
+        }
     }
 }

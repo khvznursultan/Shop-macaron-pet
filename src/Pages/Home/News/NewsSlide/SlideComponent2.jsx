@@ -9,7 +9,7 @@ import Nabor from './assets/nabor-macarun.jpg';
 import Macarun from './assets/macarun-spb.jpg';
 import Cartosh from './assets/kartoshka-desert-spb.jpg';
 import Cake from './assets/cake-pops-spb.jpg';
-import { Pagination } from 'swiper/modules';
+import {Autoplay } from 'swiper/modules';
 
 const SlideComponent2 = () => {
     return (
@@ -18,10 +18,12 @@ const SlideComponent2 = () => {
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
-                pagination={{
-                    dynamicBullets: true,
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
                 }}
-                modules={[Pagination]}
+                modules={[Autoplay]}
                 className={styles.mySwiper}
             >
                 <SwiperSlide className={styles.swiperSlide}>

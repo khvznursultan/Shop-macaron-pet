@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FaUser, FaUserCheck } from "react-icons/fa";
 import Registration from '../../../Pages/Registration/Registration';
 import { loadUserFromLocalStorage, logoutUser } from '../../../store/userSlice';
+// import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const HeaderPartOne = () => {
     const dispatch = useDispatch();
@@ -61,6 +62,7 @@ const HeaderPartOne = () => {
                 </div>
             </div>
             {isRegistrationVisible && <Registration onClose={toggleRegistration} />}
+            {/* <BurgerMenu /> */}
         </div>
     );
 };
