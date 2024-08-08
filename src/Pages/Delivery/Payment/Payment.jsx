@@ -14,7 +14,7 @@ const Payment = () => {
             </div>
             <div className="payment__container container">
                 <div className="payment__left">
-                    <img src={Velik} alt="" />
+                    <img src={Velik} alt="Доставка" />
                 </div>
                 <div className="payment__right">
                     <h2>Доставка и оплата</h2>

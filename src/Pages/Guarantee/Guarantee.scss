@@ -1,15 +1,21 @@
 .guarantee {
     padding: 42px;
     background: #F7F7F7;
+
     h2 {
         margin: 22px 0 24px;
+        font-size: 24px;
+        text-align: center;
     }
 
     &__text {
-        width: 663px;
-        height: 81px;
+        width: 100%;
+        max-width: 663px;
+        height: auto;
         text-align: center;
         margin-bottom: 24px;
+        font-size: 18px;
+        line-height: 1.4;
     }
 
     p {
@@ -20,7 +26,7 @@
     }
 
     &__container {
-        margin-top: 230px;
+        margin-top: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,6 +47,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
 
             p {
                 margin: 0;
@@ -65,6 +72,7 @@
             font-size: 24px;
             margin: 0.5rem 0;
             color: #333;
+            text-align: center;
         }
 
         p {
@@ -86,8 +94,12 @@
         display: flex;
         justify-content: center;
         gap: 30px;
+        flex-wrap: wrap;
 
         &__block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             p {
                 color: #292929;
                 font-size: 14px;
@@ -97,6 +109,125 @@
             }
             &__text{
                 width: 270px;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &__text {
+            width: 100%;
+        }
+        &__navigate {
+            font-size: 14px;
+
+            div {
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        &__bottom {
+            gap: 20px;
+
+            &__block {
+                &__text{
+                    width: 200px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__navigate {
+            font-size: 12px;
+
+            div {
+                p {
+                    font-size: 12px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        &__bottom {
+            gap: 15px;
+
+            &__block {
+                &__text{
+                    width: 150px;
+                }
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px;
+
+        h2 {
+            font-size: 18px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__navigate {
+            font-size: 10px;
+
+            div {
+                p {
+                    font-size: 10px;
+                }
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        &__bottom {
+            gap: 10px;
+
+            &__block {
+                &__text{
+                    width: 120px;
+                }
+                p {
+                    font-size: 8px;
+                }
             }
         }
     }

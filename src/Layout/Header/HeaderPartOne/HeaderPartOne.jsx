@@ -62,7 +62,6 @@ const HeaderPartOne = () => {
                 </div>
             </div>
             {isRegistrationVisible && <Registration onClose={toggleRegistration} />}
-            {/* <BurgerMenu /> */}
         </div>
     );
 };

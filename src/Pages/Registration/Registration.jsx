@@ -64,7 +64,7 @@ const Registration = ({ onClose }) => {
               />
             </label>
             <button onClick={handleRegister} disabled={loading}>
-              {loading ? 'Регистрация...' : 'Зарегестрироваться'}
+              {loading ? 'Регистрация...' : 'Зарегистрироваться'}
             </button>
             <p>
               <span style={{ cursor: 'pointer' }} className="login-link" onClick={() => setShowLogin(true)}>
