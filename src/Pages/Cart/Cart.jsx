@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Cart.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
-import { addToCart, deleteCart } from '../../store/cartSlice'; 
+import { addToCart, deleteCart } from '../../store/cartSlice';
 
 const Cart = () => {
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.cartSlice);
+    const [promoCodeInput, setPromoCodeInput] = useState('');
+    const [promoCodes, setPromoCodes] = useState([]); 
+    const [discount, setDiscount] = useState(0);
 
     useEffect(() => {
         const storedCart = JSON.parse(localStorage.getItem('cart'));
@@ -22,6 +25,16 @@ const Cart = () => {
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/promocode')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Загруженные промокоды:', data);
+                setPromoCodes(data || []);
+            })
+            .catch(error => console.error('Ошибка загрузки промокодов:', error));
+    }, []);
 
     const handleIncrement = (id) => {
         dispatch(addToCart({ id, count: 1 }));
@@ -38,6 +51,21 @@ const Cart = () => {
         dispatch(deleteCart({ id }));
     };
 
+    const handlePromoCode = () => {
+        if (!promoCodes) {
+            alert('Ошибка: Промокоды не загружены.');
+            return;
+        }
+
+        const code = promoCodes.find(promo => promo.text === promoCodeInput);
+        if (code) {
+            setDiscount(code.sale);
+        } else {
+            setDiscount(0);
+            alert('Неверный промокод');
+        }
+    };
+
     const getTotalPrice = () => {
         return cart.reduce((total, item) => {
             const itemPrice = item.sale > 0
@@ -48,12 +76,7 @@ const Cart = () => {
     };
 
     const getTotalDiscount = () => {
-        return cart.reduce((total, item) => {
-            const discount = item.sale > 0
-                ? item.price / 100 * item.sale * item.count
-                : 0;
-            return total + discount;
-        }, 0);
+        return (getTotalPrice() * discount) / 100;
     };
 
     return (
@@ -101,8 +124,14 @@ const Cart = () => {
                     </div>
                     <div className="line"></div>
                     <div className="form">
-                        <p>Промокод</p> <input type="text" placeholder='Введите промокод' />
-                        <button>Применить</button>
+                        <p>Промокод</p>
+                        <input
+                            type="text"
+                            placeholder='Введите промокод'
+                            value={promoCodeInput}
+                            onChange={(e) => setPromoCodeInput(e.target.value)}
+                        />
+                        <button onClick={handlePromoCode}>Применить</button>
                     </div>
                     <button className="checkout-button">Оформить заказ</button>
                 </div>

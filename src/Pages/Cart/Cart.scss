@@ -4,7 +4,6 @@
     font-size: 30px;
     padding: 20px 0;
 
-
     &__navigate {
         max-width: 1170px;
         margin: 0 auto;
@@ -40,7 +39,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+
         h2 {
             text-align: center;
             margin-bottom: 20px;
@@ -59,6 +58,7 @@
         margin-bottom: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
         .remove-icon {
             position: absolute;
             top: 10px;
@@ -67,7 +67,7 @@
             color: #e7426a;
             cursor: pointer;
             transition: color 0.3s;
-    
+
             &:hover {
                 color: #d63156;
             }
@@ -133,7 +133,8 @@
                 margin-bottom: 5px;
             }
 
-            .discounted-price, .final-price {
+            .discounted-price,
+            .final-price {
                 color: #e7426a;
                 font-weight: bold;
                 font-size: 24px;
@@ -156,7 +157,9 @@
                 text-align: center;
             }
 
-            &__price, &__sale, &__final {
+            &__price,
+            &__sale,
+            &__final {
                 display: flex;
                 justify-content: space-between;
                 margin: 10px 0;
@@ -234,6 +237,73 @@
 
                 &:hover {
                     background: #d63156;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__item {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+
+            &__left {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            &__count {
+                width: 100%;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                button {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 24px;
+                }
+
+                .count {
+                    font-size: 24px;
+                }
+            }
+
+            &__price {
+                width: 100%;
+                align-items: flex-start;
+
+                .original-price,
+                .discounted-price,
+                .final-price {
+                    font-size: 20px;
+                }
+            }
+        }
+
+
+        &__total {
+            max-width: 100%;
+            padding: 20px;
+
+            .form {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+        
+
+                input {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-bottom: 10px;
+                    padding: 10px;
+                }
+
+                button {
+                    width: 100%;
+                    margin-left: 0;
                 }
             }
         }

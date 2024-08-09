@@ -23,6 +23,12 @@
       "password": "$2a$10$WR6RjKbLTT9Unli2mKyWQOnY4QcZI7UAIGusU96ZMROmtLjLXCENe",
       "name": "Nursultan",
       "id": 4
+    },
+    {
+      "email": "nurs@gmail.com",
+      "password": "$2a$10$eVNHJK7in6TRZsuHugia8uZ.p.wk225bmyCFIvddNOilweWWaspZy",
+      "name": "Nurs",
+      "id": 5
     }
   ],
   "clothes": [
@@ -281,6 +287,16 @@
       "compound": [
         "Миндальные кейк-попсы"
       ]
+    }
+  ],
+  "promocode":[
+    {
+      "text":"zxc",
+      "sale":10
+    },
+    {
+      "text":"20",
+      "sale":20
     }
   ]
 }
