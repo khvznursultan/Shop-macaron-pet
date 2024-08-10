@@ -1,0 +1,123 @@
+.company {
+    padding: 34px 0;
+
+    &__navigate {
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        margin-top: 220px;
+        margin-bottom: 80px;
+
+        div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+
+            p {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                color: #333;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+
+            svg {
+                margin: 0 10px;
+                color: #6c757d;
+            }
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0.5rem 0;
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__top {
+        display: flex;
+        margin-bottom: 100px;
+        background: #ebedee;
+        justify-content: space-between;
+        &__block {
+            display: flex;
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            a {
+                margin: 0 0 10px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                width: 80%;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+
+        &__clothes {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center; 
+
+            img {
+                width: 100%;
+            }
+            h4{
+                margin: 10px 0;
+            }
+            p{
+                color: #676767;
+            }
+        }
+    }
+}
+@media (max-width: 800px){
+    .company__top{
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 70%;
+            height: 45%;
+        }
+        .company__bottom{
+            flex-direction: column;
+        }
+    }
+}

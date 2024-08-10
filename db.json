@@ -29,6 +29,12 @@
       "password": "$2a$10$eVNHJK7in6TRZsuHugia8uZ.p.wk225bmyCFIvddNOilweWWaspZy",
       "name": "Nurs",
       "id": 5
+    },
+    {
+      "email": "nurs1@gmail.com",
+      "password": "$2a$10$UfYTVnQ3J8hwSFC23UJIPe5WDdvMTVM4ykq5oSiBrwmNciRtfx3J6",
+      "name": "nrst",
+      "id": 6
     }
   ],
   "clothes": [
@@ -289,14 +295,14 @@
       ]
     }
   ],
-  "promocode":[
+  "promocode": [
     {
-      "text":"zxc",
-      "sale":10
+      "text": "zxc",
+      "sale": 10
     },
     {
-      "text":"20",
-      "sale":20
+      "text": "20",
+      "sale": 20
     }
   ]
 }

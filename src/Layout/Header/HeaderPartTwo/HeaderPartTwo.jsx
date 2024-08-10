@@ -41,9 +41,9 @@ const HeaderPartTwo = () => {
                         <li className='no-underline logo'><img src={Logo} alt="" /></li>
                     </button>
 
-                    <li 
-                        className='catalog-item' 
-                        onMouseEnter={handleMouseEnter} 
+                    <li
+                        className='catalog-item'
+                        onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
                         ВЕСЬ КАТАЛОГ
@@ -56,7 +56,9 @@ const HeaderPartTwo = () => {
                             </ul>
                         </div>
                     </li>
-                    <li className='no-underline'>КОМПАНИЯМ</li>
+                    <Link to={'./company'}>
+                        <li className='no-underline'>КОМПАНИЯМ</li>
+                    </Link>
                 </ul>
             </div>
         </div>

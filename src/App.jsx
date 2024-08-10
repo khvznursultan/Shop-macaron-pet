@@ -15,6 +15,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Guarantee from './Pages/Guarantee/Guarantee';
 import Delivery from './Pages/Delivery/Delivery';
 import Catalog from './Pages/Catalog/Catalog';
+import Company from './Pages/Company/Company';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -48,6 +49,7 @@ const App = () => {
                     <Route path='guarantee' element={<Guarantee />} />
                     <Route path='delivery' element={<Delivery />} />
                     <Route path='catalog' element={<Catalog />} />
+                    <Route path='company' element={<Company />} />
                 </Route>
                 <Route path='*' element={<NotFound />} />
             </Routes>
